@@ -1,4 +1,4 @@
-# jitone-ai - integrate AI-powered features directly into your Filament forms.
+# jitone-ai:- Build AI-powered Filament forms.
 
 **jitone-ai is a powerful FilamentPHP plugin that integrates AI-powered features directly into your Filament forms.**
 
@@ -8,8 +8,6 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/jiten14/jitone-ai.svg?style=flat-square)](https://packagist.org/packages/jiten14/jitone-ai)
 
 
-
-# jitone-ai - integrate AI-powered features directly into your Filament forms.
 
 **⚠️ Warning: This package is in alpha and should not be used in production environments. It is currently intended for testing and internal use only.**
 

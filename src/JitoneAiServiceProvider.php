@@ -6,6 +6,7 @@ use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Jiten14\JitoneAi\Commands\JitoneAiCommand;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Log;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\RichEditor;
@@ -102,18 +103,14 @@ class JitoneAiServiceProvider extends PackageServiceProvider
 
     protected function installPackage(string $package, string $version): void
     {
-        $this->info("Installing {$package}...");
+        Log::info("Installing {$package}...");
         Artisan::call('composer require ' . $package . ':' . $version);
     }
 
     protected function upgradePackage(string $package, string $version): void
     {
-        if ($this->confirm("The package {$package} needs to be upgraded. Do you want to proceed?")) {
-            $this->info("Upgrading {$package}...");
-            Artisan::call('composer require ' . $package . ':' . $version);
-        } else {
-            $this->warn("Package {$package} was not upgraded. Some features may not work correctly.");
-        }
+        Log::info("Upgrading {$package}...");
+        Artisan::call('composer require ' . $package . ':' . $version);
     }
 
     protected function checkOtherRequirements(): void
@@ -132,12 +129,12 @@ class JitoneAiServiceProvider extends PackageServiceProvider
         }
 
         if (!empty($missingPackages)) {
-            $this->error('The following packages are required but not installed:');
+            Log::error('The following packages are required but not installed:');
             foreach ($missingPackages as $package) {
-                $this->line('- ' . $package);
+                Log::error('- ' . $package);
             }
-            $this->error('Please install these packages before proceeding.');
-            exit(1);
+            Log::error('Please install these packages before proceeding.');
+            // We don't call exit(1) here as it would stop the entire application
         }
     }
 }

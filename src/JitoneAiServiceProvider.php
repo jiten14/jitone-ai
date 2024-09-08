@@ -5,7 +5,6 @@ namespace Jiten14\JitoneAi;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Jiten14\JitoneAi\Commands\JitoneAiCommand;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Log;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
@@ -48,7 +47,7 @@ class JitoneAiServiceProvider extends PackageServiceProvider
         $this->registerWithAIMacro(Textarea::class);
         $this->registerWithAIMacro(RichEditor::class);
 
-        $this->checkAndInstallDependencies();
+        $this->checkDependencies();
     }
 
     protected function registerWithAIMacro(string $componentClass)
@@ -60,22 +59,33 @@ class JitoneAiServiceProvider extends PackageServiceProvider
         });
     }
 
-    protected function checkAndInstallDependencies(): void
+    protected function checkDependencies(): void
     {
         $requiredPackages = [
             'openai-php/laravel' => '^0.8.1',
             'spatie/laravel-package-tools' => '^1.15.0',
+            'filament/filament' => '^3.2',
+            'filament/forms' => '^3.0',
         ];
+
+        $missingOrOutdated = [];
 
         foreach ($requiredPackages as $package => $version) {
             if (!$this->isPackageInstalled($package)) {
-                $this->installPackage($package, $version);
-            } elseif ($package === 'openai-php/laravel' && $this->needsUpgrade($package, $version)) {
-                $this->upgradePackage($package, $version);
+                $missingOrOutdated[] = "{$package} (not installed, requires {$version})";
+            } elseif ($this->needsUpgrade($package, $version)) {
+                $installedVersion = $this->getInstalledVersion($package);
+                $missingOrOutdated[] = "{$package} (installed: {$installedVersion}, requires {$version})";
             }
         }
 
-        $this->checkOtherRequirements();
+        if (!empty($missingOrOutdated)) {
+            Log::warning('JitoneAi: The following packages are missing or outdated:');
+            foreach ($missingOrOutdated as $package) {
+                Log::warning("- {$package}");
+            }
+            Log::warning('Please install or update these packages for full functionality.');
+        }
     }
 
     protected function isPackageInstalled(string $package): bool
@@ -99,42 +109,5 @@ class JitoneAiServiceProvider extends PackageServiceProvider
             }
         }
         return '0.0.0';
-    }
-
-    protected function installPackage(string $package, string $version): void
-    {
-        Log::info("Installing {$package}...");
-        Artisan::call('composer require ' . $package . ':' . $version);
-    }
-
-    protected function upgradePackage(string $package, string $version): void
-    {
-        Log::info("Upgrading {$package}...");
-        Artisan::call('composer require ' . $package . ':' . $version);
-    }
-
-    protected function checkOtherRequirements(): void
-    {
-        $requiredPackages = [
-            'filament/filament' => '^3.2',
-            'filament/forms' => '^3.0',
-        ];
-
-        $missingPackages = [];
-
-        foreach ($requiredPackages as $package => $version) {
-            if (!$this->isPackageInstalled($package)) {
-                $missingPackages[] = $package . ':' . $version;
-            }
-        }
-
-        if (!empty($missingPackages)) {
-            Log::error('The following packages are required but not installed:');
-            foreach ($missingPackages as $package) {
-                Log::error('- ' . $package);
-            }
-            Log::error('Please install these packages before proceeding.');
-            // We don't call exit(1) here as it would stop the entire application
-        }
     }
 }

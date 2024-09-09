@@ -13,7 +13,7 @@ class GenerateImageAction
     public function execute($field, $record, $data, array $options = [])
     {
         return Action::make('generateImage')
-            ->label('Generate Image with AI')
+            ->label('Generate with AI')
             ->icon('heroicon-s-sparkles')
             ->form([
                 Textarea::make('ai_prompt')

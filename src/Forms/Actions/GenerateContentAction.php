@@ -14,7 +14,7 @@ class GenerateContentAction
     public function execute($field, $record, $data, array $options = [])
     {
         return Action::make('generateContent')
-            ->label('Generate Content with AI')
+            ->label('Generate with AI')
             ->icon('heroicon-s-sparkles')
             ->form([
                 Toggle::make('use_existing_content')

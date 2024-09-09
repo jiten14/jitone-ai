@@ -24,23 +24,7 @@ class JitoneAiServiceProvider extends PackageServiceProvider
         $package
             ->name(static::$name)
             ->hasConfigFile()
-            ->hasCommand(JitoneAiCommand::class)
-            ->hasInstallCommand(function (InstallCommand $command) {
-                $command
-                    ->publishConfigFile()
-                    ->askToStarRepoOnGitHub('jiten14/jitone-ai')
-                    ->runAfterInstall(function () {
-                        $this->runStorageLinkCommand();
-                    });
-            });
-    }
-
-    protected function runStorageLinkCommand(): void
-    {
-        // Check if the symbolic link already exists before running the command
-        if (!file_exists(public_path('storage'))) {
-            Artisan::call('storage:link');
-        }
+            ->hasCommand(JitoneAiCommand::class);
     }
 
     public function packageRegistered(): void

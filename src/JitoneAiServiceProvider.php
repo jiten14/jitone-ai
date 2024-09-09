@@ -28,10 +28,11 @@ class JitoneAiServiceProvider extends PackageServiceProvider
             ->hasInstallCommand(function (InstallCommand $command) {
                 $command
                     ->publishConfigFile()
-                    ->askToStarRepoOnGitHub('jiten14/jitone-ai');
+                    ->askToStarRepoOnGitHub('jiten14/jitone-ai')
+                    ->runAfterInstall(function () {
+                        $this->runStorageLinkCommand();
+                    });
             });
-
-            $this->runStorageLinkCommand();
     }
 
     protected function runStorageLinkCommand(): void

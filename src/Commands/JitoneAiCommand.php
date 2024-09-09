@@ -26,20 +26,6 @@ class JitoneAiCommand extends Command
         $this->info('JitoneAi package has been set up successfully!');
         $this->info('Please review the configuration file at config/jitone-ai.php');
 
-        // Ask to star the repo
-        if ($this->confirm('Would you like to star our repo on GitHub?', true)) {
-            $repoUrl = 'https://github.com/jiten14/jitone-ai';
-            $this->info("Thanks! You can star the repo here: {$repoUrl}");
-            
-            if (PHP_OS_FAMILY === 'Darwin') {
-                exec("open {$repoUrl}");
-            } elseif (PHP_OS_FAMILY === 'Windows') {
-                exec("start {$repoUrl}");
-            } elseif (PHP_OS_FAMILY === 'Linux') {
-                exec("xdg-open {$repoUrl}");
-            }
-        }
-
         return self::SUCCESS;
     }
 }

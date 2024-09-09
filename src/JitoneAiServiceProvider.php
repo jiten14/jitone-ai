@@ -12,6 +12,7 @@ use Filament\Forms\Components\RichEditor;
 use Jiten14\JitoneAi\Forms\Actions\GenerateContentAction;
 use Jiten14\JitoneAi\Services\OpenAIService;
 use Jiten14\JitoneAi\Services\ImageGenerationService;
+use Spatie\LaravelPackageTools\Commands\InstallCommand;
 
 class JitoneAiServiceProvider extends PackageServiceProvider
 {
@@ -22,34 +23,12 @@ class JitoneAiServiceProvider extends PackageServiceProvider
         $package
             ->name(static::$name)
             ->hasConfigFile()
-            ->hasCommand(JitoneAiCommand::class);
-
-        // Register a post-install hook
-        $this->app->booted(function () {
-            $this->registerPostInstallHook();
-        });
-    }
-
-    protected function registerPostInstallHook()
-    {
-        if ($this->app->runningInConsole()) {
-            $composerJson = json_decode(file_get_contents(base_path('composer.json')), true);
-            $scripts = $composerJson['scripts'] ?? [];
-
-            if (!isset($scripts['post-autoload-dump'])) {
-                $scripts['post-autoload-dump'] = [];
-            }
-
-            if (!in_array('@php artisan jitone-ai:install', $scripts['post-autoload-dump'])) {
-                $scripts['post-autoload-dump'][] = '@php artisan jitone-ai:install';
-                $composerJson['scripts'] = $scripts;
-
-                file_put_contents(
-                    base_path('composer.json'),
-                    json_encode($composerJson, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)
-                );
-            }
-        }
+            ->hasCommand(JitoneAiCommand::class)
+            ->hasInstallCommand(function (InstallCommand $command) {
+                $command
+                    ->publishConfigFile()
+                    ->askToStarRepoOnGitHub('jiten14/jitone-ai');
+            });
     }
 
     public function packageRegistered(): void

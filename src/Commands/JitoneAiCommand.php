@@ -20,6 +20,9 @@ class JitoneAiCommand extends Command
             '--tag' => "jitone-ai-config"
         ]);
 
+        //Create openai-php/laravel Config File
+        $this->call('openai:install');
+
         // Create storage link
         $this->call('storage:link');
 

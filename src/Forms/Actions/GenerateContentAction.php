@@ -8,6 +8,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Toggle;
 use Jiten14\JitoneAi\JitoneAi;
+use Filament\Notifications\Notification;
 
 class GenerateContentAction
 {
@@ -55,50 +56,58 @@ class GenerateContentAction
                     ->visible(fn (callable $get) => !$get('use_existing_content')),
             ])
             ->action(function (array $data) use ($field, $options) {
-                if ($data['use_existing_content']) {
-                    $currentContent = $field->getState();
-                    $action = $data['existing_content_action'];
-                    
-                    switch ($action) {
-                        case 'refine':
-                            $prompt = "Refine the following text: $currentContent";
-                            break;
-                        case 'expand':
-                            $prompt = "Expand on the following text: $currentContent";
-                            break;
-                        case 'shorten':
-                            $prompt = "Shorten the following text while maintaining its key points: $currentContent";
-                            break;
-                        default:
-                            throw new \Exception("Invalid action selected for existing content.");
-                    }
-                } else {
-                    $prompt = $data['ai_prompt'] ?? null;
-                    
-                    if (empty($prompt)) {
-                        throw new \Exception("Prompt is empty or null. Form data: " . json_encode($data));
-                    }
-                }
-                
-                $generatedContent = app(JitoneAi::class)->generateContent($prompt, $options);
-                
-                if ($data['use_existing_content']) {
-                    // Replace the existing content
-                    $newContent = $generatedContent;
-                } else {
-                    // Append the new content to the existing content
-                    $currentContent = $field->getState();
-                    if ($field instanceof RichEditor) {
-                        $newContent = $currentContent . "\n\n" . $generatedContent;
-                    } elseif ($field instanceof Textarea) {
-                        $newContent = $currentContent . "\n" . $generatedContent;
+                if (!env('OPENAI_API_KEY')) {
+                    Notification::make()
+                        ->warning()
+                        ->title('OpenAI API Key Missing')
+                        ->body('Please add your OpenAI API Key to the .env file before proceeding.')
+                        ->send();
+                }else {
+                    if ($data['use_existing_content']) {
+                        $currentContent = $field->getState();
+                        $action = $data['existing_content_action'];
+                        
+                        switch ($action) {
+                            case 'refine':
+                                $prompt = "Refine the following text: $currentContent";
+                                break;
+                            case 'expand':
+                                $prompt = "Expand on the following text: $currentContent";
+                                break;
+                            case 'shorten':
+                                $prompt = "Shorten the following text while maintaining its key points: $currentContent";
+                                break;
+                            default:
+                                throw new \Exception("Invalid action selected for existing content.");
+                        }
                     } else {
-                        $newContent = trim($currentContent . ' ' . $generatedContent);
+                        $prompt = $data['ai_prompt'] ?? null;
+                        
+                        if (empty($prompt)) {
+                            throw new \Exception("Prompt is empty or null. Form data: " . json_encode($data));
+                        }
                     }
+                    
+                    $generatedContent = app(JitoneAi::class)->generateContent($prompt, $options);
+                    
+                    if ($data['use_existing_content']) {
+                        // Replace the existing content
+                        $newContent = $generatedContent;
+                    } else {
+                        // Append the new content to the existing content
+                        $currentContent = $field->getState();
+                        if ($field instanceof RichEditor) {
+                            $newContent = $currentContent . "\n\n" . $generatedContent;
+                        } elseif ($field instanceof Textarea) {
+                            $newContent = $currentContent . "\n" . $generatedContent;
+                        } else {
+                            $newContent = trim($currentContent . ' ' . $generatedContent);
+                        }
+                    }
+                    
+                    // Set the new content
+                    $field->state($newContent);
                 }
-                
-                // Set the new content
-                $field->state($newContent);
             })
             ->modalHeading('Generate Content with AI')
             ->modalButton('Generate');

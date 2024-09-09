@@ -1,4 +1,4 @@
-# jitone-ai:- Build AI-powered Filament forms.
+# Jitone AI:- Build AI-powered Filament forms.
 
 **jitone-ai is a powerful FilamentPHP plugin that integrates AI-powered features directly into your Filament forms.**
 
@@ -34,15 +34,16 @@ php artisan jitone-ai:install
 ```
 
 **This command will:**
-- Publish the configuration file
+- Publish the configuration file for `Jitone AI` Settings.
+- Publish the configiration file for `openai-php/laravel` Settings.
 - Create a symbolic link for storage
-2. We use [openai-php/laravel](https://github.com/openai-php/laravel) package to connect with OpenAI API. Configure your OpenAI API key in your .env file:
+
+2. We use [openai-php/laravel](https://github.com/openai-php/laravel) package to connect with OpenAI API. Blank environment variables for the OpenAI API key and organization id are already appended to your .env file, Add your API key here.
 
 ```env
-OPENAI_API_KEY=your_api_key_here
+OPENAI_API_KEY=sk-...
+OPENAI_ORGANIZATION=org-...
 ```
-# JitoneAI
-
 ## Configuration
 
 The `config/jitone-ai.php` file allows you to set default values and templates:
@@ -110,7 +111,7 @@ The package provides a dedicated `AITextField` for enhanced content generation:
 ```php
 use Jiten14\JitoneAi\Forms\Components\AITextField;
 
-AITextField::make('content')
+AITextField::make('content')->withAI()
 ```
 
 ##### With Options:

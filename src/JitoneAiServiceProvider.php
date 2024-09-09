@@ -29,6 +29,16 @@ class JitoneAiServiceProvider extends PackageServiceProvider
                     ->publishConfigFile()
                     ->askToStarRepoOnGitHub('jiten14/jitone-ai');
             });
+
+            $this->runStorageLinkCommand();
+    }
+
+    protected function runStorageLinkCommand(): void
+    {
+        // Check if the symbolic link already exists before running the command
+        if (!file_exists(public_path('storage'))) {
+            Artisan::call('storage:link');
+        }
     }
 
     public function packageRegistered(): void

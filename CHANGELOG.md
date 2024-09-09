@@ -9,3 +9,7 @@ All notable changes to `jitone-ai` will be documented in this file.
 ## v0.0.8-beta - 2024-09-09
 
 - Release beta version
+
+## v0.1.0 - 2024-09-10
+
+- Initial Release

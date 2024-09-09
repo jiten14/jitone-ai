@@ -1,3 +1,4 @@
+
 # Jitone AI:- Build AI-powered Filament forms.
 
 **jitone-ai is a powerful FilamentPHP plugin that integrates AI-powered features directly into your Filament forms.**
@@ -7,21 +8,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/jiten14/jitone-ai.svg?style=flat-square)](https://packagist.org/packages/jiten14/jitone-ai)
 
 
-
-**⚠️ Warning: This package is currently in beta. While it includes many features and improvements, it may still have bugs or incomplete functionality. Please test it thoroughly and provide feedback, but do not use it in production environments.**
-
 ## Installation
-
-### Beta version for Testing
-
-To install the beta version of this package, use the following Composer command:
-
-```bash
-composer require jiten14/jitone-ai:^0.0.8-beta
-```
-### Stable Verion (Comming Soon)
-
-You can install the package via composer:
 
 ```bash
 composer require jiten14/jitone-ai
@@ -180,11 +167,19 @@ AIFileUpload::make('image')
 
 ## Changelog
 
+Jitone AI follows semantic versioning:
+
+- **v1.0.0**: Initial release.
+
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
 ## Contributing
 
 Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
+
+## FAQ
+- **File upload previews not loading after generating Image.**
+Ans.- Make sure that the APP_URL variable in your .env file matches the domain you're using to access your app from, including the protocol (http or https).
 
 ## Security Vulnerabilities & Support
 

@@ -20,6 +20,9 @@ class JitoneAiCommand extends Command
             '--tag' => "jitone-ai-config"
         ]);
 
+        // Create storage link
+        $this->call('storage:link');
+
         $this->info('JitoneAi package has been set up successfully!');
         $this->info('Please review the configuration file at config/jitone-ai.php');
 

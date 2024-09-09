@@ -4,7 +4,6 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jiten14/jitone-ai.svg?style=flat-square)](https://packagist.org/packages/jiten14/jitone-ai)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jiten14/jitone-ai/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/jiten14/jitone-ai/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jiten14/jitone-ai/fix-php-code-styling.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/jiten14/jitone-ai/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/jiten14/jitone-ai.svg?style=flat-square)](https://packagist.org/packages/jiten14/jitone-ai)
 
 

@@ -26,6 +26,9 @@ class JitoneAiServiceProvider extends PackageServiceProvider
             ->hasCommand(JitoneAiCommand::class)
             ->hasInstallCommand(function (InstallCommand $command) {
                 $command
+                    ->startWith(function (InstallCommand $command) {
+                        $command->call('jitone-ai:install');
+                    })
                     ->publishConfigFile()
                     ->askToStarRepoOnGitHub('jiten14/jitone-ai');
             });

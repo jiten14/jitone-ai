@@ -13,6 +13,7 @@ use Jiten14\JitoneAi\Forms\Actions\GenerateContentAction;
 use Jiten14\JitoneAi\Services\OpenAIService;
 use Jiten14\JitoneAi\Services\ImageGenerationService;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
+use Illuminate\Support\Facades\Artisan;
 
 class JitoneAiServiceProvider extends PackageServiceProvider
 {

@@ -179,13 +179,16 @@ Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 ## FAQ
 - **File upload previews not loading after generating Image.**
-Ans.- Make sure that the APP_URL variable in your .env file matches the domain you're using to access your app from, including the protocol (http or https).
 
-## Security Vulnerabilities & Support
+**Ans.**- Make sure that the APP_URL variable in your .env file matches the domain you're using to access your app from, including the protocol (http or https).
 
-If you discover any security vulnerabilities or bugs, please let us know so we can address them promptly. 
+## Security Vulnerabilities
 
-For support with this package or to report any issues, feel free to reach out. We are here to assist you!
+If you discover any security vulnerabilities or bugs, please let us know so I can address them promptly. 
+
+## Support
+
+For support with this package or to report any issues, feel free to reach out [Jitendriya Tripathy](mailto:jitendriya14@gmail.com). I am happy to assist you!
 
 ## Credits
 

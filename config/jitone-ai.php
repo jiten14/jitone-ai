@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'default_model' => 'gpt-3.5-turbo-instruct',
+    'default_model' => 'gpt-4o',
     'default_max_tokens' => 150,
     'default_temperature' => 0.7,
     'default_image_size' => '1024x1024',

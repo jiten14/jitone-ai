@@ -7,6 +7,15 @@
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jiten14/jitone-ai/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/jiten14/jitone-ai/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/jiten14/jitone-ai.svg?style=flat-square)](https://packagist.org/packages/jiten14/jitone-ai)
 
+## What's New in Jitone AI v0.1.1
+
+1. **Support for Multiple OpenAI Endpoints**:
+   - The latest OpenAI models, including the `gpt-4` and `gpt-3.5-turbo`, now use the **Chat API endpoint**, improving performance and response flexibility.
+   - The `gpt-3.5-turbo-instruct` model will continue using the **Completion API endpoint**.
+
+2. **Completion Models Now Considered Legacy**:
+   - Please note that the models using the Completion endpoint, such as `gpt-3.5-turbo-instruct`, are now considered **legacy models**.
+   - We highly recommend trying out the latest models for improved results and future-proofing. You can explore them here: [OpenAI Models Documentation](https://platform.openai.com/docs/models).
 
 ## Installation
 
@@ -170,6 +179,7 @@ AIFileUpload::make('image')
 Jitone AI follows semantic versioning:
 
 - **v0.1.0**: Initial release.
+- **v0.1.1**: Added support for multiple OpenAI endpoints.
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
@@ -178,9 +188,8 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 ## FAQ
-- **File upload previews not loading after generating Image.**
-
-**Ans.**- Make sure that the APP_URL variable in your .env file matches the domain you're using to access your app from, including the protocol (http or https).
+1. **File upload previews not loading after generating Image.**
+    - **Ans.**- Make sure that the APP_URL variable in your .env file matches the domain you're using to access your app from, including the protocol (http or https).
 
 ## Security Vulnerabilities
 

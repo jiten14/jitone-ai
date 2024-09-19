@@ -7,6 +7,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Actions\Action;
 use Jiten14\JitoneAi\JitoneAi;
 use Illuminate\Support\Facades\Storage;
+use Filament\Notifications\Notification;
 
 class GenerateImageAction
 {
@@ -32,19 +33,45 @@ class GenerateImageAction
                     }),
             ])
             ->action(function (array $data) use ($field, $options) {
-                $prompt = $data['ai_prompt'] ?? null;
-                
-                if (empty($prompt)) {
-                    throw new \Exception("Image prompt is empty or null. Form data: " . json_encode($data));
+                if (!env('OPENAI_API_KEY')) {
+                    Notification::make()
+                        ->warning()
+                        ->title('OpenAI API Key Missing')
+                        ->body('Please add your OpenAI API Key to the .env file before proceeding.')
+                        ->send();
+                    return;
                 }
-                
-                $imageUrl = app(JitoneAi::class)->generateImage($prompt, $options);
-                
-                // Convert the full URL to a relative path
-                $relativePath = $this->urlToRelativePath($imageUrl);
-                
-                // Set the field state with an array containing the relative path
-                $field->state([$relativePath]);
+
+                try {
+                    $prompt = $data['ai_prompt'] ?? null;
+                    
+                    if (empty($prompt)) {
+                        throw new \Exception("Image prompt is empty or null. Form data: " . json_encode($data));
+                    }
+                    
+                    $imageUrl = app(JitoneAi::class)->generateImage($prompt, $options);
+                    
+                    // Convert the full URL to a relative path
+                    $relativePath = $this->urlToRelativePath($imageUrl);
+                    
+                    // Set the field state with an array containing the relative path
+                    $field->state([$relativePath]);
+
+                    // Notify the user of successful image generation
+                    Notification::make()
+                        ->success()
+                        ->title('Image Generated Successfully')
+                        ->body('The AI-generated image has been added to the field.')
+                        ->send();
+
+                } catch (\Exception $e) {
+                    // Notify the user if an error occurs
+                    Notification::make()
+                        ->danger()
+                        ->title('Error Generating Image')
+                        ->body('An error occurred while generating the image: ' . $e->getMessage())
+                        ->send();
+                }
             })
             ->modalHeading('Generate Image with AI')
             ->modalButton('Generate');

@@ -31,9 +31,19 @@ class JitoneAi
         return config('jitone-ai.content_templates', []);
     }
 
+    public function getTemplatesPlaceholders()
+    {
+        return config('jitone-ai.template_placeholders', []);
+    }
+
     public function getImagePrompts()
     {
         return config('jitone-ai.image_prompts', []);
+    }
+
+    public function getPromptsPlaceholders()
+    {
+        return config('jitone-ai.prompt_placeholders', []);
     }
     
 }

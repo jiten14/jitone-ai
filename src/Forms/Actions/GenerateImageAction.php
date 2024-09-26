@@ -19,7 +19,8 @@ class GenerateImageAction
             ->form([
                 Textarea::make('ai_prompt')
                     ->label('Describe the image you want to generate')
-                    ->required(),
+                    ->required()
+                    ->placeholder(fn ($get) => $get('ai_prompt_placeholder')),
                 Select::make('template')
                     ->label('Or choose a template')
                     ->options(function () {
@@ -27,8 +28,10 @@ class GenerateImageAction
                     })
                     ->reactive()
                     ->afterStateUpdated(function ($state, callable $set) {
+                        $placeholders = app(JitoneAi::class)->getPromptsPlaceholders();
                         if ($state) {
-                            $set('ai_prompt', $state);
+                            $placeholder = $placeholders[$state] ?? 'Write your content here';
+                            $set('ai_prompt_placeholder', $placeholder);
                         }
                     }),
             ])

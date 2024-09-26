@@ -21,6 +21,20 @@ return [
         'video_script_intro' => 'Write an engaging introduction for a video script about [topic].',
         'podcast_episode_summary' => 'Summarize the key points of a podcast episode about [topic].',
     ],
+
+    // Add Content Templates placeholders here
+    'template_placeholders' => [
+        'product_description' => 'Write your product name',
+        'blog_intro' => 'Write your blog topic',
+        'email_subject' => 'Write your email purpose',
+        'social_media_post' => 'Write the event or product',
+        'seo_meta_description' => 'Write the webpage topic',
+        'customer_service_reply' => 'Write the issue',
+        'faq_answer' => 'Write the FAQ question',
+        'press_release_headline' => 'Write the news item',
+        'video_script_intro' => 'Write the video topic',
+        'podcast_episode_summary' => 'Write the podcast topic',
+    ],
     
     'image_prompts' => [
         'product_showcase' => 'A professional photo of [product] on a white background.',
@@ -33,5 +47,19 @@ return [
         'book_cover' => 'A captivating book cover design for a [genre] novel titled [book name].',
         'logo_concept' => 'A minimalist logo design for a company named [company name].',
         'infographic_element' => 'A clean and modern infographic element representing [data or concept].',
+    ],
+
+    // Add Image prompt placeholders here
+    'prompt_placeholders' => [
+        'product_showcase' => 'Write your product name',
+        'nature_scene' => 'Write natural elements',
+        'abstract_concept' => 'Write your concept',
+        'character_portrait' => 'Describe the character',
+        'food_photography' => 'Write the dish name',
+        'tech_illustration' => 'Write the technology name',
+        'fashion_design' => 'Write clothing items & style',
+        'book_cover' => 'Write Genre & Book name',
+        'logo_concept' => 'Write the company name',
+        'infographic_element' => 'Explain the data or concept',
     ],
 ];

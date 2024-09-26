@@ -180,6 +180,7 @@ Jitone AI follows semantic versioning:
 
 - **v0.1.0**: Initial release.
 - **v0.1.1**: Added support for multiple OpenAI endpoints.
+- **v0.1.3**: Added placeholders to Ai Promt Fields.
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 

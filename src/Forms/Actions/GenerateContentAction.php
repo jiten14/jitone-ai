@@ -41,6 +41,7 @@ class GenerateContentAction
                 Textarea::make('ai_prompt')
                     ->label('Enter your prompt')
                     ->required()
+                    ->placeholder(fn ($get) => $get('ai_prompt_placeholder'))
                     ->visible(fn (callable $get) => !$get('use_existing_content')),
                 Select::make('template')
                     ->label('Or choose a template')
@@ -49,8 +50,10 @@ class GenerateContentAction
                     })
                     ->reactive()
                     ->afterStateUpdated(function ($state, callable $set) {
+                        $placeholders = app(JitoneAi::class)->getTemplatesPlaceholders();
                         if ($state) {
-                            $set('ai_prompt', $state);
+                            $placeholder = $placeholders[$state] ?? 'Write your content here';
+                            $set('ai_prompt_placeholder', $placeholder);
                         }
                     })
                     ->visible(fn (callable $get) => !$get('use_existing_content')),

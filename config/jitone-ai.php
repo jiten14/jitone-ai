@@ -20,6 +20,11 @@ return [
         'press_release_headline' => 'Create a newsworthy headline for a press release about [news item].',
         'video_script_intro' => 'Write an engaging introduction for a video script about [topic].',
         'podcast_episode_summary' => 'Summarize the key points of a podcast episode about [topic].',
+        'newsletter_cta' => 'Create a compelling call-to-action for a newsletter about [topic].',
+        'product_review_intro' => 'Write an engaging opening paragraph for a review of [product name].',
+        'event_invitation' => 'Craft a persuasive invitation text for [event name].',
+        'job_posting_summary' => 'Compose an attention-grabbing summary for a job posting seeking a [job title].',
+        'testimonial_request' => 'Write a friendly email requesting a testimonial from a customer who used [product/service].',
     ],
 
     // Add Content Templates placeholders here
@@ -34,6 +39,11 @@ return [
         'press_release_headline' => 'Write the news item',
         'video_script_intro' => 'Write the video topic',
         'podcast_episode_summary' => 'Write the podcast topic',
+        'newsletter_cta' => 'Write Newsletter Topic',
+        'product_review_intro' => 'Write Product Name',
+        'event_invitation' => 'Write Event Name',
+        'job_posting_summary' => 'Write Job Title',
+        'testimonial_request' => 'Write Product or Service name',
     ],
     
     'image_prompts' => [

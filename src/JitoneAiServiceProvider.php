@@ -74,14 +74,6 @@ class JitoneAiServiceProvider extends PackageServiceProvider
                 $missingOrOutdated[] = "{$package} (installed: {$installedVersion}, requires {$version})";
             }
         }
-
-        if (!empty($missingOrOutdated)) {
-            Log::warning('JitoneAi: The following packages are missing or outdated:');
-            foreach ($missingOrOutdated as $package) {
-                Log::warning("- {$package}");
-            }
-            Log::warning('Please install or update these packages for full functionality.');
-        }
     }
 
     protected function isPackageInstalled(string $package): bool

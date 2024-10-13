@@ -21,3 +21,7 @@ All notable changes to `jitone-ai` will be documented in this file.
 ## v0.1.3 - 2024-09-26
 
 - Added placeholders to Ai Promt Fields.
+
+## v0.1.4 - 2024-10-13
+
+- Minor Fixes & 5 more content promts added.

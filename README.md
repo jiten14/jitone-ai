@@ -7,16 +7,6 @@
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jiten14/jitone-ai/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/jiten14/jitone-ai/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/jiten14/jitone-ai.svg?style=flat-square)](https://packagist.org/packages/jiten14/jitone-ai)
 
-## What's New in Jitone AI v0.1.1
-
-1. **Support for Multiple OpenAI Endpoints**:
-   - The latest OpenAI models, including the `gpt-4` and `gpt-3.5-turbo`, now use the **Chat API endpoint**, improving performance and response flexibility.
-   - The `gpt-3.5-turbo-instruct` model will continue using the **Completion API endpoint**.
-
-2. **Completion Models Now Considered Legacy**:
-   - Please note that the models using the Completion endpoint, such as `gpt-3.5-turbo-instruct`, are now considered **legacy models**.
-   - We highly recommend trying out the latest models for improved results and future-proofing. You can explore them here: [OpenAI Models Documentation](https://platform.openai.com/docs/models).
-
 ## Installation
 
 ```bash
@@ -181,6 +171,7 @@ Jitone AI follows semantic versioning:
 - **v0.1.0**: Initial release.
 - **v0.1.1**: Added support for multiple OpenAI endpoints.
 - **v0.1.3**: Added placeholders to Ai Promt Fields.
+- **v0.1.4**: Minor Fixes & add 5 more content promts.
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
@@ -198,7 +189,27 @@ If you discover any security vulnerabilities or bugs, please let us know so I ca
 
 ## Support
 
-For support with this package or to report any issues, feel free to reach out [Jitendriya Tripathy](mailto:jitendriya14@gmail.com). I am happy to assist you!
+For support with this package or to report any issues, feel free to reach out [Jitone AI Support](mailto:support@jiten.one). I am happy to assist you!
+
+## Premium Version
+
+**Key Features of JitoneAi Pro:**
+
+- **AI Content Generation:** Access over 25 premium templates, categorized by use case. Select your content tone and generate tailored text effortlessly.
+
+- **AI Image Generator:** Create stunning visuals using 25+ premium templates, each designed for specific use cases.
+
+- **Text Modification Tools:** Refine, expand, shorten, summarize, translate, or correct grammar in existing text. Optimize titles for SEO or readability.
+
+- **SEO Meta Description Generator:** Automatically generate SEO-friendly meta descriptions from your content.
+
+- **Audio Transcription:** Convert uploaded audio into text with ease.
+
+- **Text-to-Audio Conversion:** Transform your text into high-quality audio outputs.
+
+- **JitoneAi Pro offers a one-time payment with lifetime updates and priority support.**
+
+[Visit for more details about JitoneAI Pro](https://jitoneai.lemonsqueezy.com/buy/a51ffb2d-2ad1-4565-af29-4eebc645b499) 
 
 ## Credits
 

@@ -25,3 +25,7 @@ All notable changes to `jitone-ai` will be documented in this file.
 ## v0.1.4 - 2024-10-13
 
 - Minor Fixes & 5 more content promts added.
+
+## v0.1.5 - 2024-10-21
+
+- Added support for openai-php/laravel 0.10 & above.

@@ -58,7 +58,7 @@ class JitoneAiServiceProvider extends PackageServiceProvider
     protected function checkDependencies(): void
     {
         $requiredPackages = [
-            'openai-php/laravel' => '^0.8.1',
+            'openai-php/laravel' => '^0.8.1|^0.10.0',
             'spatie/laravel-package-tools' => '^1.15.0',
             'filament/filament' => '^3.2',
             'filament/forms' => '^3.0',
@@ -85,7 +85,13 @@ class JitoneAiServiceProvider extends PackageServiceProvider
     protected function needsUpgrade(string $package, string $requiredVersion): bool
     {
         $installedVersion = $this->getInstalledVersion($package);
-        return version_compare($installedVersion, trim($requiredVersion, '^~'), '<');
+        $versions = explode('|', trim($requiredVersion, '^~'));
+        foreach ($versions as $version) {
+            if (version_compare($installedVersion, trim($version, '^~'), '>=')) {
+                return false;
+            }
+        }
+        return true;
     }
 
     protected function getInstalledVersion(string $package): string

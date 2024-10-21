@@ -29,7 +29,7 @@
         "filament/filament": "^3.2",
         "filament/forms": "^3.0",
         "spatie/laravel-package-tools": "^1.15.0",
-        "openai-php/laravel": "^0.8.1"
+        "openai-php/laravel": "^0.8.1|^0.10.0"
     },
     "require-dev": {
         "nunomaduro/collision": "^7.9",

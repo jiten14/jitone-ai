@@ -7,6 +7,11 @@
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jiten14/jitone-ai/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/jiten14/jitone-ai/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/jiten14/jitone-ai.svg?style=flat-square)](https://packagist.org/packages/jiten14/jitone-ai)
 
+## Support Me
+
+Fuel the future of JitoneAI with your support! By joining as a subscriber, you’re not only backing an open-source tool that brings AI magic to Filament forms but also unlocking exclusive benefits just for you. Get priority, personalized support whenever you need it and access a developer’s guide filled with insights to customize and extend the package for your unique projects. Your subscription, starting at just $15/month or $150/year, helps keep JitoneAI evolving and accessible to all. Let’s build powerful tools together—thank you for supporting innovation!
+[Join Now](https://buymeacoffee.com/jitendriyan/membership)
+
 ## Installation
 
 ```bash

@@ -10,6 +10,7 @@
 ## Support Me
 
 Fuel the future of JitoneAI with your support! By joining as a subscriber, you’re not only backing an open-source tool that brings AI magic to Filament forms but also unlocking exclusive benefits just for you. Get priority, personalized support whenever you need it and access a developer’s guide filled with insights to customize and extend the package for your unique projects. Your subscription, starting at just $15/month or $150/year, helps keep JitoneAI evolving and accessible to all. Let’s build powerful tools together—thank you for supporting innovation!
+
 [Join Now](https://buymeacoffee.com/jitendriyan/membership)
 
 ## Installation
@@ -174,6 +175,7 @@ AIFileUpload::make('image')
 Jitone AI follows semantic versioning:
 
 - **v0.1.5**: Added support for openai-php/laravel 0.10 & above.
+- **v0.1.6**: Added Updates Notification Features.
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 

@@ -59,7 +59,7 @@ class GenerateContentAction
                     ->visible(fn (callable $get) => !$get('use_existing_content')),
             ])
             ->action(function (array $data) use ($field, $options) {
-                if (!env('OPENAI_API_KEY')) {
+                if (empty(config('openai.api_key'))) {
                     Notification::make()
                         ->warning()
                         ->title('OpenAI API Key Missing')

@@ -7,11 +7,25 @@
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jiten14/jitone-ai/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/jiten14/jitone-ai/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/jiten14/jitone-ai.svg?style=flat-square)](https://packagist.org/packages/jiten14/jitone-ai)
 
-## Support Me
+## Looking for More? Upgrade to the Premium Version of JitoneAI Today!
 
-Fuel the future of JitoneAI with your support! By joining as a subscriber, you’re not only backing an open-source tool that brings AI magic to Filament forms but also unlocking exclusive benefits just for you. Get priority, personalized support whenever you need it and access a developer’s guide filled with insights to customize and extend the package for your unique projects. Your subscription, starting at just $15/month or $150/year, helps keep JitoneAI evolving and accessible to all. Let’s build powerful tools together—thank you for supporting innovation!
+**Key Features of JitoneAi Pro:**
 
-[Join Now](https://buymeacoffee.com/jitendriyan/membership)
+- **AI Content Generation:** Access over 25 premium templates, categorized by use case. Select your content tone and generate tailored text effortlessly.
+
+- **AI Image Generator:** Create stunning visuals using 25+ premium templates, each designed for specific use cases.
+
+- **Text Modification Tools:** Refine, expand, shorten, summarize, translate, or correct grammar in existing text. Optimize titles for SEO or readability.
+
+- **SEO Meta Description Generator:** Automatically generate SEO-friendly meta descriptions from your content.
+
+- **Audio Transcription:** Convert uploaded audio into text with ease.
+
+- **Text-to-Audio Conversion:** Transform your text into high-quality audio outputs.
+
+- **JitoneAi Pro offers a one-time payment with lifetime updates and priority support.**
+
+[Visit for more details about JitoneAI Pro](https://jitoneai.lemonsqueezy.com/buy/a51ffb2d-2ad1-4565-af29-4eebc645b499)
 
 ## Installation
 
@@ -174,8 +188,7 @@ AIFileUpload::make('image')
 
 Jitone AI follows semantic versioning:
 
-- **v0.1.5**: Added support for openai-php/laravel 0.10 & above.
-- **v0.1.6**: Added Updates Notification Features.
+- **v0.1.7**: Fixes applied in OpenAi Configuration.
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
@@ -194,26 +207,6 @@ If you discover any security vulnerabilities or bugs, please let us know so I ca
 ## Support
 
 For support with this package or to report any issues, feel free to reach out [Jitone AI Support](mailto:support@jiten.one). I am happy to assist you!
-
-## Premium Version
-
-**Key Features of JitoneAi Pro:**
-
-- **AI Content Generation:** Access over 25 premium templates, categorized by use case. Select your content tone and generate tailored text effortlessly.
-
-- **AI Image Generator:** Create stunning visuals using 25+ premium templates, each designed for specific use cases.
-
-- **Text Modification Tools:** Refine, expand, shorten, summarize, translate, or correct grammar in existing text. Optimize titles for SEO or readability.
-
-- **SEO Meta Description Generator:** Automatically generate SEO-friendly meta descriptions from your content.
-
-- **Audio Transcription:** Convert uploaded audio into text with ease.
-
-- **Text-to-Audio Conversion:** Transform your text into high-quality audio outputs.
-
-- **JitoneAi Pro offers a one-time payment with lifetime updates and priority support.**
-
-[Visit for more details about JitoneAI Pro](https://jitoneai.lemonsqueezy.com/buy/a51ffb2d-2ad1-4565-af29-4eebc645b499) 
 
 ## Credits
 

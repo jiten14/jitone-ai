@@ -33,3 +33,7 @@ All notable changes to `jitone-ai` will be documented in this file.
 ## v0.1.6 - 2024-11-16
 
 - Added Updates Notification Features.
+
+## v0.1.7 - 2025-01-09
+
+- Fixes applied in OpenAi Configuration.

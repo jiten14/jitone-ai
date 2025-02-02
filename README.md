@@ -7,26 +7,6 @@
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jiten14/jitone-ai/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/jiten14/jitone-ai/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/jiten14/jitone-ai.svg?style=flat-square)](https://packagist.org/packages/jiten14/jitone-ai)
 
-## Looking for More? Upgrade to the Premium Version of JitoneAI Today!
-
-**Key Features of JitoneAi Pro:**
-
-- **AI Content Generation:** Access over 25 premium templates, categorized by use case. Select your content tone and generate tailored text effortlessly.
-
-- **AI Image Generator:** Create stunning visuals using 25+ premium templates, each designed for specific use cases.
-
-- **Text Modification Tools:** Refine, expand, shorten, summarize, translate, or correct grammar in existing text. Optimize titles for SEO or readability.
-
-- **SEO Meta Description Generator:** Automatically generate SEO-friendly meta descriptions from your content.
-
-- **Audio Transcription:** Convert uploaded audio into text with ease.
-
-- **Text-to-Audio Conversion:** Transform your text into high-quality audio outputs.
-
-- **JitoneAi Pro offers a one-time payment with lifetime updates and priority support.**
-
-[Visit for more details about JitoneAI Pro](https://jitoneai.lemonsqueezy.com/buy/a51ffb2d-2ad1-4565-af29-4eebc645b499)
-
 ## Installation
 
 ```bash

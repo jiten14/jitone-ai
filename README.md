@@ -3,7 +3,7 @@
 
 **jitone-ai is a powerful FilamentPHP plugin that integrates AI-powered features directly into your Filament forms.**
 
-Unlock powerful features with the Pro version [here](https://filamentphp.com/plugins/jitendriya-tripathy-jitoneai-pro).**
+**Unlock powerful features with the Pro version [here](https://filamentphp.com/plugins/jitendriya-tripathy-jitoneai-pro).**
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jiten14/jitone-ai.svg?style=flat-square)](https://packagist.org/packages/jiten14/jitone-ai)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jiten14/jitone-ai/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/jiten14/jitone-ai/actions?query=workflow%3Arun-tests+branch%3Amain)

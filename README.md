@@ -188,6 +188,34 @@ If you discover any security vulnerabilities or bugs, please let us know so I ca
 
 For support with this package or to report any issues, feel free to reach out [Jitone AI Support](mailto:support@jiten.one). I am happy to assist you!
 
+## 🚀 Take Your Filament Forms to the Next Level — Upgrade to JitoneAI Pro
+
+If you're finding value in the free version of JitoneAI, the **Pro package is built to supercharge your workflow**. Designed for developers and teams who want more control, more capabilities, and more productivity — without reinventing the wheel.
+
+### 🔓 What’s Inside JitoneAI Pro?
+- ✨ **Custom AI Templates for Different User Roles**
+- 🧠 **Prompt Memory for Better Contextual Generation**
+- 📸 **Advanced Image Customization Tools**
+- 💼 **Multi-model Flexibility with Prioritized Fallbacks**
+- 📊 **Usage Logs & Debug Tools for AI Requests**
+- 🛠️ **Developer-First Hooks for Deep Customization**
+
+### 💡 Why Go Pro?
+You’ve already seen what JitoneAI can do — but the Pro version removes the ceiling. Whether you're building for clients, internal teams, or products at scale, JitoneAI Pro saves hours, reduces friction, and ensures production-grade flexibility.
+
+### 🎯 Ideal For
+- Agencies building client portals with rich content automation  
+- SaaS teams shipping AI-powered user experiences  
+- Freelancers who want to deliver more — faster  
+- Any developer who values performance and polish  
+
+### 👉 Get JitoneAI Pro
+For more details and to purchase **JitoneAI Pro**, visit the official Filament plugin page:  
+**[https://filamentphp.com/plugins/jitendriya-tripathy-jitoneai-pro](https://filamentphp.com/plugins/jitendriya-tripathy-jitoneai-pro)**
+
+**Own your AI workflow. Ship faster. Upgrade with confidence.**
+
+
 ## Credits
 
 - [Jitendriya Tripathy](https://github.com/jiten14)

@@ -58,7 +58,7 @@ class JitoneAiServiceProvider extends PackageServiceProvider
     protected function checkDependencies(): void
     {
         $requiredPackages = [
-            'openai-php/laravel' => '^0.8.1|^0.10.0',
+            'openai-php/laravel' => '^0.8.1|^0.10.0|^0.13.0',
             'spatie/laravel-package-tools' => '^1.15.0',
             'filament/filament' => '^3.2',
             'filament/forms' => '^3.0',

@@ -37,3 +37,7 @@ All notable changes to `jitone-ai` will be documented in this file.
 ## v0.1.7 - 2025-01-09
 
 - Fixes applied in OpenAi Configuration.
+
+## v0.1.8 - 2025-05-23
+
+- Added support for openai-php/laravel 0.13 & above.

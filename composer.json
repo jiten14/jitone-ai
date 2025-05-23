@@ -64,6 +64,9 @@
         "laravel": {
             "providers": [
                 "Jiten14\\JitoneAi\\JitoneAiServiceProvider"
+            ],
+            "dont-discover": [
+                "orchestra/canvas"
             ]
         }
     },

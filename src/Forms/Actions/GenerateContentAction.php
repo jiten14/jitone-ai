@@ -7,6 +7,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\Placeholder;
 use Jiten14\JitoneAi\JitoneAi;
 use Filament\Notifications\Notification;
 
@@ -57,6 +58,14 @@ class GenerateContentAction
                         }
                     })
                     ->visible(fn (callable $get) => !$get('use_existing_content')),
+                Placeholder::make('agencyops_ad')
+                    ->label('')
+                    ->content(new \Illuminate\Support\HtmlString(
+                        '<div style="margin-top:4px; padding:8px 12px; background:#f9fafb; border:1px solid #e5e7eb; border-radius:8px; display:flex; align-items:center; justify-content:space-between; font-size:12px; color:#6b7280;">'
+                        . '<span>🚀 Running an agency? <a href="https://introdoor.com" target="_blank" style="color:#6366f1; font-weight:600; text-decoration:none;">AgencyOps</a> — self-hosted agency dashboard. $299 once, yours forever.</span>'
+                        . '<a href="https://introdoor.com" target="_blank" style="margin-left:12px; white-space:nowrap; font-size:11px; color:#6366f1; font-weight:500; text-decoration:none;">Learn more →</a>'
+                        . '</div>'
+                    )),
             ])
             ->action(function (array $data) use ($field, $options) {
                 if (empty(config('openai.api_key'))) {

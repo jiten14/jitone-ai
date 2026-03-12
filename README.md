@@ -175,7 +175,7 @@ AIFileUpload::make('image')
 
 Jitone AI follows semantic versioning:
 
-- **v0.1.8**: Added support for openai-php/laravel 0.13 & above.
+- **v0.1.9**: Updated Test files to support latest versions.
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 

@@ -13,6 +13,12 @@ For a short time, you can get 20% off your purchase by using the coupon code **S
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jiten14/jitone-ai/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/jiten14/jitone-ai/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/jiten14/jitone-ai.svg?style=flat-square)](https://packagist.org/packages/jiten14/jitone-ai)
 
+# Agencyops
+**test text**
+```bash
+    test
+```
+
 ## Installation
 
 ```bash
